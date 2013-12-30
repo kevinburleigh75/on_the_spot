@@ -29,8 +29,9 @@ module OnTheSpot
                                   end
                 render :text => field_or_method
               else
-                parsed_data = JSON.parse(select_data.gsub("'", '"').gsub('\"', "'"))
-                render :text => parsed_data[object.send(field).to_s]
+                # parsed_data = JSON.parse(select_data.gsub("'", '"').gsub('\"', "'"))
+                # render :text => parsed_data[object.send(field).to_s]
+                render :text => object.send(field).to_s
               end
             else
               render :text => object.errors.full_messages.join("\n"), :status => 422

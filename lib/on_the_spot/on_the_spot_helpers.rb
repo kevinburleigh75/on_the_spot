@@ -76,7 +76,7 @@ module OnTheSpot
     end
 
     def lookup_display_value(id_value_array, id_str)
-      found_pair = id_value_array.select{ |idv| idv[0].to_s == id_str.to_s }
+      found_pair = id_value_array.select{ |idv| idv[1].to_s == id_str.to_s }
       found_pair.size == 0 ? '' : found_pair[0][1]
     end
 
